@@ -65,6 +65,8 @@ AUTHORIZED BY: AML Intelligence System v2.0
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        flexWrap: 'wrap',
+        gap: '12px',
         marginBottom: '20px',
         paddingBottom: '16px',
         borderBottom: '1px solid #e5e7eb'
@@ -101,7 +103,7 @@ AUTHORIZED BY: AML Intelligence System v2.0
               borderLeft: `3px solid ${alert.severity === 'CRITICAL' ? '#b91c1c' : '#d97706'}`,
               cursor: 'pointer'
             }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}
                 onClick={() => setExpanded(expanded === i ? null : i)}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                   <div style={{

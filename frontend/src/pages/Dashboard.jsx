@@ -420,7 +420,7 @@ export default function Dashboard() {
       </div>
 
       {showBank&&(
-        <div style={{ display:'grid',gridTemplateColumns:'310px 1fr',gap:16,marginBottom:20,animation:'fadeUp .4s ease' }}>
+        <div className="demo-layout-grid">
           <div style={{ display:'flex',flexDirection:'column',alignItems:'center' }}>
             <div style={{ fontSize:9,color:'#6b7280',letterSpacing:'.15em',marginBottom:8,alignSelf:'flex-start' }}>UNION BANK — CUSTOMER APP</div>
             <div style={{ width:280,height:560,background:'#111827',borderRadius:36,padding:'10px 6px',boxShadow:'0 24px 40px rgba(15,23,42,.35)',position:'relative',flexShrink:0 }}>
@@ -566,7 +566,7 @@ export default function Dashboard() {
             <div><div style={{ fontSize:9,color:'#b91c1c',letterSpacing:'.2em',marginBottom:4 }}>● LIVE DETECTION SEQUENCE</div><div style={{ fontSize:18,fontWeight:700,fontFamily:'Rajdhani, sans-serif',color:'#111827' }}>CIRCULAR LAYERING — ₹47,00,000</div></div>
             {demoStep>=4&&<div style={{ textAlign:'center' }}><div style={{ fontSize:48,fontWeight:700,fontFamily:'JetBrains Mono',color:'#b91c1c',lineHeight:1 }}>{riskScore}</div><div style={{ fontSize:9,color:'#6b7280' }}>RISK SCORE / 100</div></div>}
           </div>
-          <div style={{ display:'grid',gridTemplateColumns:'repeat(6,1fr)',gap:8,marginBottom:16 }}>
+          <div className="demo-sequence-grid">
             {[{l:'INIT',d:'Surveillance active'},{l:'SCAN',d:'Processing 1000 txns'},{l:'FLAG',d:'4 accounts flagged'},{l:'SCORE',d:'Risk: 94/100'},{l:'ALERT',d:'Pattern confirmed'},{l:'REPORT',d:'STR ready'}].map((s,i)=>(
               <div key={i} style={{ padding:8,borderRadius:6,textAlign:'center',background:demoStep>i?'#fee2e2':'#f9fafb',border:`1px solid ${demoStep>i?'#fecaca':'#e5e7eb'}`,transition:'all .4s ease' }}>
                 <div style={{ fontSize:9,fontWeight:600,color:demoStep>i?'#b91c1c':'#6b7280' }}>{s.l}</div>
@@ -592,7 +592,7 @@ export default function Dashboard() {
         </div>
       )}
 
-      <div style={{ display:'grid',gridTemplateColumns:'repeat(5,1fr)',gap:12,marginBottom:16 }}>
+      <div className="dashboard-stats-grid">
         {[
           {label:'TRANSACTIONS',value:stats?.totalTransactions?.toLocaleString()||'1,000',sub:'Total monitored',color:'#00aaff',icon:'◈'},
           {label:'ACCOUNTS',value:stats?.totalAccounts?.toLocaleString()||'142',sub:'Unique accounts',color:'#00e5ff',icon:'◉'},
@@ -609,7 +609,7 @@ export default function Dashboard() {
         ))}
       </div>
 
-      <div style={{ display:'grid',gridTemplateColumns:'1fr 340px',gap:12,marginBottom:16 }}>
+      <div className="dashboard-charts-grid">
         <div className="card">
           <div className="section-label">TRANSACTION VOLUME — HOURLY</div>
           <ResponsiveContainer width="100%" height={160}>
@@ -639,7 +639,7 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div style={{ display:'grid',gridTemplateColumns:'1fr 320px',gap:12 }}>
+      <div className="dashboard-live-grid">
         <div className="card card-red">
           <div className="section-label">ACTIVE FRAUD ALERTS</div>
           {alerts.length===0?<div style={{ textAlign:'center',padding:30,color:'#6b7280',fontSize:12 }}>NO ALERTS — RUN ANALYSIS OR USE BANK APP DEMO</div>:(

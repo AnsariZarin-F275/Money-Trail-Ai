@@ -29,9 +29,9 @@ export default function App() {
       />
      
       <TickerTape />
-      <div style={{ display: 'flex', minHeight: '100vh', paddingTop: '32px' }}>
+      <div className="app-layout">
         <Navbar />
-        <main style={{ flex: 1, marginLeft: '200px', padding: '20px 24px', minHeight: '100vh' }}>
+        <main className="main-content-area">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/graph" element={<GraphView />} />

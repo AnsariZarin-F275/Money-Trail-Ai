@@ -60,12 +60,12 @@ export default function Investigation() {
         </h1>
       </div>
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: selected ? '380px 1fr' : '1fr',
-        gap: '12px',
-        alignItems: 'flex-start',
-      }}>
+      <div
+        className="investigation-layout"
+        style={{
+          gridTemplateColumns: selected ? '380px 1fr' : '1fr',
+        }}
+      >
 
         {/* Case list */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>

@@ -130,16 +130,16 @@ export default function GraphView() {
   }
 
   return (
-    <div style={{ height: 'calc(100vh - 72px)', display: 'flex', flexDirection: 'column' }}>
+    <div className="graph-layout-container">
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', marginBottom: '16px', gap: '12px' }}>
         <div>
           <div style={{ fontSize: '9px', color: '#5a7fa8', letterSpacing: '0.2em', marginBottom: '4px' }}>NETWORK ANALYSIS</div>
           <h1 style={{ fontSize: '20px', fontWeight: '700', fontFamily: 'Rajdhani', letterSpacing: '0.05em' }}>
             TRANSACTION GRAPH
           </h1>
         </div>
-          <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
             {[
               { label: 'NODES', value: stats.nodes, color: '#0b5ed7' },
               { label: 'EDGES', value: stats.edges, color: '#0891b2' },
@@ -215,7 +215,7 @@ export default function GraphView() {
         </div>
       </div>
 
-      <div style={{ flex: 1, display: 'flex', gap: '12px', minHeight: 0 }}>
+      <div className="graph-main-area">
         <div className="card" style={{ flex: 1, padding: 0, overflow: 'hidden', position: 'relative' }}>
           {loading && (
             <div

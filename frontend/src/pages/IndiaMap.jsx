@@ -300,6 +300,8 @@ export default function IndiaMap() {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: 12,
           marginBottom: 20,
           paddingBottom: 16,
           borderBottom: '1px solid #e5e7eb',
@@ -333,7 +335,7 @@ export default function IndiaMap() {
         </div>
       </div>
 
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 280px', gap:16 }}>
+      <div className="dashboard-charts-grid">
 
         {/* Map */}
         <div

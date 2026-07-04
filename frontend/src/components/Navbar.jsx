@@ -13,20 +13,8 @@ export default function Navbar() {
   const loc = useLocation()
 
   return (
-    <nav style={{
-      position: 'fixed',
-      left: 0,
-      top: '32px',
-      bottom: 0,
-      width: '200px',
-      background: '#ffffff',
-      borderRight: '1px solid #e5e7eb',
-      display: 'flex',
-      flexDirection: 'column',
-      zIndex: 100,
-      boxShadow: '2px 0 12px rgba(15,23,42,0.06)',
-    }}>
-      <div style={{ padding: '20px 16px', borderBottom: '1px solid #e5e7eb' }}>
+    <nav className="sidebar-nav-container">
+      <div className="sidebar-header">
         <div style={{ fontSize: '9px', color: '#6b7280', letterSpacing: '0.12em', marginBottom: '6px' }}>
           INSTITUTION
         </div>
@@ -49,7 +37,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div style={{ padding: '12px 10px', flex: 1 }}>
+      <div className="sidebar-links">
         {links.map(link => {
           const active = loc.pathname === link.path
           return (
@@ -83,10 +71,10 @@ export default function Navbar() {
                   }}
                 />
               )}
-              <span style={{ fontSize: '14px', color: active ? '#0b5ed7' : '#9ca3af' }}>
+              <span className="sidebar-link-icon" style={{ color: active ? '#0b5ed7' : '#9ca3af' }}>
                 {link.icon}
               </span>
-              <div>
+              <div className="sidebar-link-text">
                 <div
                   style={{
                     fontSize: '10px',
@@ -104,7 +92,7 @@ export default function Navbar() {
         })}
       </div>
 
-      <div style={{ padding: '12px 16px', borderTop: '1px solid #e5e7eb' }}>
+      <div className="sidebar-footer">
         {[
           { label: 'BACKEND', status: 'OK', color: '#00e676' },
           { label: 'ML ENGINE', status: 'OK', color: '#00e676' },

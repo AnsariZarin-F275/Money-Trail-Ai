@@ -54,6 +54,8 @@ export default function Intelligence() {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: 12,
           marginBottom: 20,
           paddingBottom: 16,
           borderBottom: '1px solid #e5e7eb',
@@ -122,7 +124,7 @@ export default function Intelligence() {
       )}
 
       {!loading && tab === 'timelayer' && timeData && (
-        <div style={{ display:'grid', gridTemplateColumns:'320px 1fr', gap:12 }}>
+        <div className="intelligence-layout">
 
           <div style={{ display:'flex', flexDirection:'column', gap:6, maxHeight:'calc(100vh - 220px)', overflowY:'auto' }}>
             <div style={{ fontSize:9, color:'#6b7280', letterSpacing:'0.15em', marginBottom:4 }}>
@@ -275,7 +277,7 @@ export default function Intelligence() {
       )}
 
       {!loading && tab === 'frequency' && freqData && (
-            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12 }}>
+            <div className="intelligence-grid-2">
 
           <div className="card">
             <div style={{ fontSize:9, color:'#6b7280', letterSpacing:'0.15em', marginBottom:12 }}>
@@ -340,7 +342,7 @@ export default function Intelligence() {
             <div style={{ fontSize:9, color:'#6b7280', letterSpacing:'0.15em', marginBottom:12 }}>
               BURST ACCOUNTS — {freqData.burst_accounts.length} ACCOUNTS WITH RAPID TRANSACTION SPIKES
             </div>
-            <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:8 }}>
+            <div className="intelligence-grid-4">
               {freqData.burst_accounts.slice(0, 8).map((acc, i) => (
                 <div key={i} style={{
                   padding:'12px', borderRadius:8,
@@ -384,7 +386,7 @@ export default function Intelligence() {
       )}
 
       {!loading && tab === 'amount' && amountData && (
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 360px', gap:12 }}>
+          <div className="dashboard-charts-grid">
 
             <div style={{ display:'flex', flexDirection:'column', gap:12 }}>
 

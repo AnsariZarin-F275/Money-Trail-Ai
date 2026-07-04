@@ -31,7 +31,7 @@ export default function TickerTape() {
       overflow: 'hidden'
     }}>
       {/* Left — Logo */}
-      <div style={{
+      <div className="ticker-logo" style={{
         width: '200px', flexShrink: 0,
         padding: '0 16px', display: 'flex', alignItems: 'center', gap: '8px',
         borderRight: '1px solid #0f2040', height: '100%'
@@ -65,7 +65,7 @@ export default function TickerTape() {
       </div>
 
       {/* Right — Time */}
-      <div style={{
+      <div className="ticker-time" style={{
         padding: '0 16px', borderLeft: '1px solid #0f2040',
         fontSize: '11px', fontWeight: '500', color: '#5a7fa8',
         flexShrink: 0
