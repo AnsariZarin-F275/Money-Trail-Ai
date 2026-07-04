@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import * as d3 from 'd3'
 import axios from 'axios'
 
-const API = 'http://localhost:5001'
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5001'
 
 export default function GraphView() {
   const svgRef = useRef(null)

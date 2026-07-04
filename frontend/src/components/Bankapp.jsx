@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 
-const API = 'http://localhost:5001'
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5001'
 
 export const ALL_ACCOUNTS = [
   { id: 'ACC001', name: 'Rajesh Kumar',      no: '****1028', balance: 1247832 },

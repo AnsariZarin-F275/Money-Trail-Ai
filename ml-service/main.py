@@ -1,5 +1,7 @@
+import os
 from typing import List, Optional
 
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -11,6 +13,8 @@ from graph_analysis import (
     detect_structuring,
     run_all_detections,
 )
+
+load_dotenv()
 
 app = FastAPI(title="MoneyTrail AI - ML Service")
 
@@ -81,4 +85,12 @@ async def fraud_analyze(transactions: List[TransactionInput]):
     """Run all fraud detections on provided transaction data."""
     data = _to_dict_list(transactions)
     return run_all_detections(transactions=data)
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    port = int(os.getenv("PORT", "8000"))
+    print(f"Starting ML service on http://localhost:{port}")
+    uvicorn.run(app, host="0.0.0.0", port=port)
 

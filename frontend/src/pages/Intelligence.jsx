@@ -5,7 +5,7 @@ import {
   AreaChart, Area, Cell, LineChart, Line, ReferenceLine
 } from 'recharts'
 
-const API = 'http://localhost:5001'
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5001'
 
 const SEV_COLOR = { CRITICAL: '#ff2a4a', HIGH: '#ffaa00', MEDIUM: '#00aaff', LOW: '#00e676' }
 

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 
-const API = 'http://localhost:5001'
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5001'
 
 export default function Alerts() {
   const [alerts, setAlerts] = useState([])

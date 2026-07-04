@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 
-const API = 'http://localhost:5001'
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5001'
 
 const CASES = [
   { id: 'CASE-UBI-001', type: 'CIRCULAR LAYERING', severity: 'CRITICAL', accounts: ['FRAUD001', 'FRAUD002', 'FRAUD003', 'FRAUD004'], amount: 4700000, window: '12 MIN', status: 'ACTIVE', pmla: 'PMLA 2002 § 3', riskScore: 94 },

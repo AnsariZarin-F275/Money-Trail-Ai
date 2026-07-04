@@ -6,7 +6,7 @@ import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, BarChart, 
 import BankApp, { ALL_ACCOUNTS } from '../components/Bankapp'
 import { useSoundEngine } from '../hooks/useSoundEngine'
 
-const API = 'http://localhost:5001'
+const API = import.meta.env.VITE_API_URL || 'http://localhost:5001'
 const socket = io(API)
 
 const LS_KEY = 'moneytrail_frozen'
